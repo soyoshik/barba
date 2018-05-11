@@ -1,9 +1,117 @@
 body {
   background-color: #ddd;
+  position: relative;
+}
+.Header {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  z-index: 99;
+  &__logo {
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 40px;
+    font-family: cursive;
+    color: #ffa84b;
+    margin-right: auto;
+    margin-left: 40px;
+  }
+  &__menu {
+    list-style: none;
+    display: flex;
+    &Item {
+      text-decoration: none;
+      color: #999;
+      font-weight: bold;
+      margin-right: 40px;
+      transition: all .3s;
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+}
+.contentArea {
+  margin: 40px auto;
+  background-color: #fff;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+.content {
+  color: #ccc;
+  font-size: 20px;
 }
 .mainTitle {
   color: #fff;
   text-align: center;
   margin: 50px auto;
   font-size: 60px;
+}
+.buttonWrap {
+  text-align: center;
+  position: relative;
+}
+#button {
+  position: relative;
+  width: 160px;
+  height: 60px;
+  color: #fff;
+  background-color: #ffa84b;
+  margin: 30px auto;
+  box-shadow: 0px 2px 3px #999;
+  border-radius: 30px;
+  font-weight: bolder;
+  transition: all .3s;
+  &:hover {
+    opacity: .7;
+  }
+  &::after {
+    content: "↓";
+    position: absolute;
+    bottom: -50px;
+    left: 73px;
+  }
+}
+
+//テストdiv
+.testArea {
+  position: relative;
+  margin: 40px auto;
+  background-color: #fff;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  padding: 20px 20px;
+}
+#testBall {
+  position: absolute;
+  height: 10px;
+  width: 0px;
+  background-color: #F0c010;
+  border-radius: 10px;
+}
+
+//シャッターエフェクト
+.shutter {
+  position: absolute;
+  width: 200vw;
+  height: 200vw;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 1;
+  pointer-events: none;
+  transition: all .8s ease-in;
+  top: -100vw;
+  right: -50vw;
+  &-a {
+    transform: scale(.01);
+    &.moved {
+      transform: scale(1);
+    }
+  }
 }
