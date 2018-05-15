@@ -72,3 +72,15 @@ Barba.Pjax.getTransition = function() {
 };
 
 Barba.Pjax.start();
+
+
+//amimejs
+$('#button').on('click', function() {
+  anime({
+    targets: "#testBall",
+    translateX: {
+    value: '+=150',
+    duration: 1000
+  }
+  });
+});
